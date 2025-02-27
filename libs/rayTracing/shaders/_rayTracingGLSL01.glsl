@@ -587,8 +587,8 @@ vec3 RayTrace()
 		}
 
 		
-                if (intersectionMaterial.type == DIFFUSE)
-                {
+      if (intersectionMaterial.type == DIFFUSE)
+      {
 			// Phong's original lighting model consists of 3 components - Ambient, Diffuse, and Specular contributions.
 			// Ambient is an old 'hack' to cheaply simulate the effect of soft, diffuse bounce lighting (Global Illumination)
 			ambientContribution = doAmbientLighting(rayColorMask, intersectionMaterial.color, ambientIntensity);
@@ -611,9 +611,9 @@ vec3 RayTrace()
 			rayOrigin = intersectionPoint + (uEPS_intersect * shadingNormal);
 			rayDirection = directionToLight; // all shadow rays go directly toward the light
 			continue; // continue next with shadow ray towards the light source
-                }
+      }
 		
-                if (intersectionMaterial.type == METAL)
+      if (intersectionMaterial.type == METAL)
 		{
 			// tint ray color with metal color
 			rayColorMask *= intersectionMaterial.color;
