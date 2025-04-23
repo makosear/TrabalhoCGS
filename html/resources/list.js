@@ -54,8 +54,6 @@ var list = {
             "Traversing": "html/textureExtraTraversingInfo",            
 			},         
 			"Realism":  {
-				"Ray Tracing 1 (CPU)": "html/raytracingExample1Info",
-				"Ray Tracing 2 (CPU)": "html/raytracingExample2Info",
             "Ray Tracing  (GLSL)": "html/rayTracingGLSLExampleInfo",
 				"Path Tracing (GLSL)": "html/pathTracingExampleInfo",            
 			},			
