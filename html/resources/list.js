@@ -91,6 +91,7 @@ var list = {
 			"Geometries - Misc":  {
 				"Cloning": "html/exampleCloningInfo",	
 				"Traverse": "html/exampleTraverseInfo",			
+				"Clipping Plane": "html/clippingPlaneInfo",			            
 			},               
 			"Interaction":  { 
             "Camera Follow Object": "html/exampleCamFollowObjInfo",        
