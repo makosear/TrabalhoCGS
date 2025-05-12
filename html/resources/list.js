@@ -11,7 +11,8 @@ var list = {
 			"Animations":  {
 				"Basic 1": "html/animation01Info",
 				"Basic 2": "html/animation02Info",
-				"Using External Objects": "html/animationExternalObjectsInfo",
+				"Attach": "html/animationAttachInfo",            
+				"External Objects": "html/animationExternalObjectsInfo",
 				"Linear Interpolation": "html/animationLerpInfo",
 				"Spherical Interpolation": "html/animationQuaternionLerpInfo",          
 			},
