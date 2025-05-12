@@ -110,7 +110,7 @@ function showInformation()
     controls.add("Animation - Attach");
     controls.addParagraph();
     controls.add("Use keyboard arrows to rotate/move the cube.");
-    controls.add("Press 'space' to shoot the ball'");
+    controls.add("Press 'space' to shoot the ball");
     controls.show();
 }
 
