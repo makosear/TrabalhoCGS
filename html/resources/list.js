@@ -7,15 +7,18 @@ var list = {
 				"Geometric Transformations 1": "html/geometricTransformation1Info",
 				"Geometric Transformations 2": "html/geometricTransformation2Info",
 				"Geometric Transformations 3": "html/geometricTransformation3Info",            
-				"Projection": "html/projectionInfo",
-				"Virtual Camera": "html/virtualCameraInfo",				
 			},
 			"Animations":  {
-				"Basic": "html/animationInfo",
+				"Basic 1": "html/animation01Info",
+				"Basic 2": "html/animation02Info",
 				"Using External Objects": "html/animationExternalObjectsInfo",
 				"Linear Interpolation": "html/animationLerpInfo",
 				"Spherical Interpolation": "html/animationQuaternionLerpInfo",          
 			},
+			"Camera":  {
+				"Projection": "html/projectionInfo",
+				"Virtual Camera": "html/virtualCameraInfo",				
+			},         
 			"Lights & Shadows":  {
 				"Types of lights": "html/lightingTypesInfo",
 				"Spotlight in Details": "html/lightingSpotlightDetailsInfo",				
