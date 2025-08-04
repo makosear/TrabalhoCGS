@@ -27,14 +27,60 @@ scene.add( axesHelper );
 let plane = createGroundPlaneXZ(20, 20)
 scene.add(plane);
 
-// create a cube
-let cubeGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-let cube = new THREE.Mesh(cubeGeometry, material);
-// position the cube
-cube.position.set(0.0, -2.0, -5.0);
-// add the cube to the scene
-camera.add(cube);
-scene.add(camera);
+const CIRCUMFERENCE_RADIUS = 8;
+
+const CIRCUMFERENCE_RADIUS_2 = 5;
+
+for (let i = 0; i < 12; i++) {
+  let s1 = createSphere();
+  s1.position.set(0, 0.5, 0);
+
+  s1.translateX(CIRCUMFERENCE_RADIUS * Math.sin(THREE.MathUtils.degToRad(30 * i)));
+  s1.translateZ(CIRCUMFERENCE_RADIUS * Math.cos(THREE.MathUtils.degToRad(30*i)));
+
+  scene.add(s1);
+}
+
+for (let i = 0; i < 12; i++) {
+  let s1 = createSphere();
+
+  let pivot = new THREE.Object3D();
+  scene.add(pivot);
+  
+  pivot.add(s1);
+  
+  s1.position.set(0, 0.5, CIRCUMFERENCE_RADIUS_2);
+  
+  pivot.rotateY(THREE.MathUtils.degToRad(30 * i));
+}
+
+const CIRCUMFERENCE_RADIUS_3 = 6.5;
+for (let i = 0; i < 12; i++) {
+  let s1 = createSphere();
+  scene.add(s1);
+  
+  // Start at center
+  s1.position.set(0, 0.5, 0);
+  
+  // Calculate angle in radians
+  const angle = THREE.MathUtils.degToRad(30 * i);
+  
+  // Move sphere out to radius distance along X axis
+  s1.translateX(CIRCUMFERENCE_RADIUS_3);
+  
+  // Rotate around Y axis at the center point
+  s1.rotateY(angle);
+}
+
+function createSphere()
+{
+  var sphereGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+  var sphereMaterial = new THREE.MeshPhongMaterial( {color:'rgb(180,180,255)',     shininess:"15",            // Shininess of the object
+  specular:"rgb(180,180,255)"
+} );
+  var sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+  return sphere;
+}
 
 // Use this to show information onscreen
 let controls = new InfoBox();
