@@ -235,7 +235,7 @@ async function initPainElemental() {
     let glbLoader = new GLTFLoader();
 
     return new Promise((resolve, reject) => {
-        glbLoader.load( '../0_AssetsT3/objects/pain/painElemental.glb', function (gltf) {
+        glbLoader.load( '../0_assetsT3/objects/pain/painElemental.glb', function (gltf) {
             const obj = gltf.scene;
             obj.traverse(function (child) {
                 if (child) {
