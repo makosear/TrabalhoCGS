@@ -1,6 +1,6 @@
 import * as THREE from  'three';
-import {OBJLoader} from './build/jsm/loaders/OBJLoader.js';
-import {MTLLoader} from './build/jsm/loaders/MTLLoader.js';
+import {OBJLoader} from 'obj-loader';
+import {MTLLoader} from 'mtl-loader';
 import {getMaxSize} from "./libs/util/util.js";
 
 //---------------------------------------------------------

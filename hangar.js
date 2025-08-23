@@ -1,7 +1,7 @@
 import * as THREE from  'three';
 import * as TF from './texturingfuncs.js'
 import { CSG } from './libs/other/CSGMesh.js';
-import { DoubleSide } from './build/three.module.js';
+import { DoubleSide } from 'double-side';
 
 export function HANGAR(comprimento,raio1, raio2, altura){
 

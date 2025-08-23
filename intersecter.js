@@ -1,6 +1,6 @@
 import * as THREE from  'three';
-import Stats from './build/jsm/libs/stats.module.js';
-import {PointerLockControls} from './build/jsm/controls/PointerLockControls.js';
+import Stats from 'stats';
+import {PointerLockControls} from 'pointer-lock-controls';
 
 import * as LOOK from './lookers.js'
 
