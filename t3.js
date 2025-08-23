@@ -1,36 +1,36 @@
-import * as THREE from  'three';
-import Stats from './build/jsm/libs/stats.module.js';
-import {initRenderer,
-        initDefaultBasicLight,
-        setDefaultMaterial, 
-        onWindowResize,
-        createGroundPlaneXZ } from "./libs/util/util.js";
+import * as THREE from 'three';
+import Stats from 'stats';
+import {
+    initRenderer,
+    initDefaultBasicLight,
+    setDefaultMaterial,
+    onWindowResize,
+    createGroundPlaneXZ
+} from "util";
 import * as S0 from "./scene0.js";
-import {PointerLockControls} from './build/jsm/controls/PointerLockControls.js';
+import { PointerLockControls } from 'pointer-lock-controls';
 import { initSoundSystem, toggleBackgroundMusic, playSound } from './sons/sons.js'; // Adicione esta importação
-import { moveBullet } from "./arma/armaLancador.js"; 
+import { moveBullet } from "./arma/armaLancador.js";
 import * as CHAVE from './chave.js';
-import * as LOOK from './lookers.js'
-import * as INTER from './intersecter.js'
-import * as SCLIMB from './stairClimb.js'
+import * as LOOK from './lookers.js';
+import * as INTER from './intersecter.js';
+import * as SCLIMB from './stairClimb.js';
 import { loadEnemies, moveEnemies, updateAnimations } from './inimigos/inimigos.js';
-import * as EL from './elevador.js'
+import * as EL from './elevador.js';
 import { toggleGun, initWeaponSystem, updateWeapons, currentGun, GUNTYPE } from './arma/armaController.js';
 
-import * as GATE from './gateAnim.js'
+import * as GATE from './gateAnim.js';
 
-import * as TF from './texturingfuncs.js'
+import * as TF from './texturingfuncs.js';
 
-import * as HANGAR from './hangar.js'
-import {OBJLoader} from './build/jsm/loaders/OBJLoader.js';
-import {MTLLoader} from './build/jsm/loaders/MTLLoader.js';
+import * as HANGAR from './hangar.js';
+import { OBJLoader } from 'obj-loader';
+import { MTLLoader } from 'mtl-loader';
 import { Plane } from './plane.js';
-import { CubeTextureLoaderSingleFile } from './libs/util/cubeTextureLoaderSingleFile.js';
-import * as VA from './animMove.js'
+import { CubeTextureLoaderSingleFile } from 'cube-texture-loader';
+import * as VA from './animMove.js';
 
 import { instancePlayer, createPlayerHpBar, updatePlayerHpBar } from './player.js';
-
-
 
 // ---------------------Configuração inicial---------------------
 let scene, renderer;
