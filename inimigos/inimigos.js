@@ -10,7 +10,7 @@ import { CACODEMON_STATE } from './cacodemon.js';
 import { fadingObjects } from '../t3.js';
 import { movePainElemental, PAINELEMENTAL_STATE } from './painelemental.js';
 import { markEnemyGroup } from './damageHandler.js';
-import { playSound } from './../sons/sons.js';
+import { playSound, playPositionalSound } from './../sons/sons.js';
 
 export const AREA_DIMENSION = 100;
 export const AREAS_Z = -150;
@@ -56,11 +56,19 @@ export function moveEnemies(scene, scenario, player, enemies, playerHasEnteredFi
     const skulls = enemies.skulls;
     const painElementals = enemies.painElementals;
 
-    if (playerHasEnteredSecondArea) 
-        for (let cacodemonData of cacodemons) moveCacodemon(cacodemonData, scenario, player, scene);
+    const activeCacodemons = cacodemons.filter(cacodemon => {
+        // Return true for cacodemons that should be moved
+        return playerHasEnteredSecondArea || !cacodemon.region.startsWith('upper');
+    });
+    
+    for (let cacodemonData of activeCacodemons) moveCacodemon(cacodemonData, scenario, player, scene);
 
-    if (playerHasEnteredFirstArea) 
-        for (let skullData of skulls) moveSkull(skullData, scenario, player);
+    const activeSkulls = skulls.filter(skull => {
+        // Return true for skulls that should be moved
+        return playerHasEnteredFirstArea || !skull.region.startsWith('upper');
+    });
+
+    for (let skullData of activeSkulls) moveSkull(skullData, scenario, player);
 
     for (let painElementalData of painElementals) movePainElemental(painElementalData, scenario, player, scene, enemies);
 }
@@ -83,12 +91,14 @@ export async function loadEnemies(scene) {
         enemyGroup.add(hpBarSprite); 
         const skullData = {
             name: 'skull',
+            region: 'upper',
             obj: enemyGroup, 
             id: i++, 
             boundingBox: new THREE.Box3().setFromObject(skull),
             targetPoint: null,
             state: SKULL_STATE.WANDERING,
             hasPlayed: false,
+            hitObject: null,    
             // HP Bar 
             hp: 20,
             maxHp: 20,
@@ -112,8 +122,12 @@ export async function loadEnemies(scene) {
 
         enemyGroup.position.copy(spawnPoint);
 
+        let region = 'upper';
+        if (spawnPoint.z > 0) region = 'lower';
+
         const cacodemonData = {
             name: 'cacodemon',
+            region: region,
             obj: enemyGroup,
             id: i++,
             lookAtFrames: 0,
@@ -383,17 +397,17 @@ export function updateHpBar(cacodemonData) {
 export function applyDamageToEnemy(enemyData, damage, enemies, firstArea, secondArea) {
     console.log(firstArea);
     console.log(secondArea);
-    if (enemyData.name.startsWith('cacodemon') && !secondArea) return;
-    if (enemyData.name.startsWith('skull') && !firstArea) return;
+    if (enemyData.name.startsWith('cacodemon') && !secondArea && enemyData.region.startsWith('upper')) return;
+    if (enemyData.name.startsWith('skull') && !firstArea && enemyData.region.startsWith('upper')) return;
         
     enemyData.hp -= damage;
             if (enemyData.name.startsWith('cacodemon')) {
                 if (secondArea) playPositionalSound('CACODEMON_HURT', enemyData.obj);
-            } else if (enemyData.name === 'skull') {
+            } else if (enemyData.name.startsWith('skull')) {
                 if (firstArea) playPositionalSound('LOST_SOUL_HURT', enemyData.obj);
-            } else if (enemyData.name === 'painElemental') {
+            } else if (enemyData.name.startsWith('painElemental')) {
                 playPositionalSound('PAIN_ELEMENTAL_HURT', enemyData.obj);
-            } else if (enemyData.name === 'soldier') {
+            } else if (enemyData.name.startsWith('soldier')) {
                 playPositionalSound('SOLDIER_HURT', enemyData.obj);
             }
     if (enemyData.hp <= 0) {
@@ -402,13 +416,13 @@ export function applyDamageToEnemy(enemyData, damage, enemies, firstArea, second
         if (enemyData.name.startsWith('cacodemon')) {
             playSound('CACODEMON_DEATH');
         }
-        if (enemyData.name === 'skull') {
+        if (enemyData.name.startsWith('skull')) {
             playSound('LOST_SOUL_DEATH');
         }
-        if (enemyData.name === 'painElemental') {
+        if (enemyData.name.startsWith('painElemental')) {
             playSound('PAIN_ELEMENTAL_DEATH');
         }
-        if (enemyData.name === 'soldier') {
+        if (enemyData.name.startsWith('soldier')) {
             playSound('SOLDIER_DEATH');
         }
         startFadingAnimation(enemyData); // Inicia a animação de desaparecimento
