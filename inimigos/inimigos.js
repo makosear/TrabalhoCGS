@@ -1,8 +1,8 @@
 import * as THREE from  'three';
-import {GLTFLoader} from '../../build/jsm/loaders/GLTFLoader.js';
-import {OBJLoader} from '../../build/jsm/loaders/OBJLoader.js';
-import {MTLLoader} from '../../build/jsm/loaders/MTLLoader.js';
-import { getMaxSize } from "../../libs/util/util.js";
+import {GLTFLoader} from '../build/jsm/loaders/GLTFLoader.js';
+import {OBJLoader} from '../build/jsm/loaders/OBJLoader.js';
+import {MTLLoader} from '../build/jsm/loaders/MTLLoader.js';
+import { getMaxSize } from "../libs/util/util.js";
 import {moveSkull} from './skull.js';
 import {moveCacodemon} from './cacodemon.js';
 import { SKULL_STATE } from './skull.js';
@@ -235,7 +235,7 @@ async function initPainElemental() {
     let glbLoader = new GLTFLoader();
 
     return new Promise((resolve, reject) => {
-        glbLoader.load( '../../0_AssetsT3/objects/pain/painElemental.glb', function (gltf) {
+        glbLoader.load( '../0_AssetsT3/objects/pain/painElemental.glb', function (gltf) {
             const obj = gltf.scene;
             obj.traverse(function (child) {
                 if (child) {

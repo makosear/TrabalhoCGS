@@ -2,32 +2,32 @@ import * as THREE from 'three';
 
 // Constantes para os caminhos dos arquivos de áudio
 export const SOUND_PATHS = {
-    BACKGROUND_MUSIC: '../../0_AssetsT3/sounds/doom.mp3',
+    BACKGROUND_MUSIC: '../0_AssetsT3/sounds/doom.mp3',
 
-    PLAYER_HURT: '../../0_AssetsT3/sounds/playerInjured.wav',
-    CHAINGUN_FIRE: '../../0_AssetsT3/sounds/chaingunFiring.wav',
-    ROCKET_LAUNCHER_FIRE: '../../0_AssetsT3/sounds/rocketFiring.wav',
-    KEY_PICKUP: '../../0_AssetsT3/sounds/chave.wav',
+    PLAYER_HURT: '../0_AssetsT3/sounds/playerInjured.wav',
+    CHAINGUN_FIRE: '../0_AssetsT3/sounds/chaingunFiring.wav',
+    ROCKET_LAUNCHER_FIRE: '../0_AssetsT3/sounds/rocketFiring.wav',
+    KEY_PICKUP: '../0_AssetsT3/sounds/chave.wav',
 
-    CACODEMON_ATTACK: '../../0_AssetsT3/sounds/cacoDemon/cacodemonAttack.wav',
-    CACODEMON_DEATH: '../../0_AssetsT3/sounds/cacoDemon/cacodemonDeath.wav',
-    CACODEMON_HURT: '../../0_AssetsT3/sounds/cacoDemon/cacodemonInjured.wav',
-    CACODEMON_NEAR: '../../0_AssetsT3/sounds/cacoDemon/cacodemonNearby.wav',
-    CACODEMON_AGGRO: '../../0_AssetsT3/sounds/cacoDemon/cacodemonSight.wav',
+    CACODEMON_ATTACK: '../0_AssetsT3/sounds/cacoDemon/cacodemonAttack.wav',
+    CACODEMON_DEATH: '../0_AssetsT3/sounds/cacoDemon/cacodemonDeath.wav',
+    CACODEMON_HURT: '../0_AssetsT3/sounds/cacoDemon/cacodemonInjured.wav',
+    CACODEMON_NEAR: '../0_AssetsT3/sounds/cacoDemon/cacodemonNearby.wav',
+    CACODEMON_AGGRO: '../0_AssetsT3/sounds/cacoDemon/cacodemonSight.wav',
 
-    LOST_SOUL_ATTACK: '../../0_AssetsT3/sounds/lostSoul/lost_soul_attack.wav',
-    LOST_SOUL_HURT: '../../0_AssetsT3/sounds/lostSoul/injured.wav',
+    LOST_SOUL_ATTACK: '../0_AssetsT3/sounds/lostSoul/lost_soul_attack.wav',
+    LOST_SOUL_HURT: '../0_AssetsT3/sounds/lostSoul/injured.wav',
 
-    PAIN_ELEMENTAL_ATTACK: '../../0_AssetsT3/sounds/painElemental/painAttack.wav',
-    PAIN_ELEMENTAL_HURT: '../../0_AssetsT3/sounds/painElemental/injured.wav',
-    PAIN_ELEMENTAL_AGGRO: '../../0_AssetsT3/sounds/painElemental/painSight.wav',
+    PAIN_ELEMENTAL_ATTACK: '../0_AssetsT3/sounds/painElemental/painAttack.wav',
+    PAIN_ELEMENTAL_HURT: '../0_AssetsT3/sounds/painElemental/injured.wav',
+    PAIN_ELEMENTAL_AGGRO: '../0_AssetsT3/sounds/painElemental/painSight.wav',
 
-    SOLDIER_ATTACK: '../../0_AssetsT3/sounds/soldier/soldierAttack.wav',
-    SOLDIER_AGGRO: '../../0_AssetsT3/sounds/soldier/soldierSight.wav',
-    SOLDIER_HURT: '../../0_AssetsT3/sounds/soldier/injured.wav',
+    SOLDIER_ATTACK: '../0_AssetsT3/sounds/soldier/soldierAttack.wav',
+    SOLDIER_AGGRO: '../0_AssetsT3/sounds/soldier/soldierSight.wav',
+    SOLDIER_HURT: '../0_AssetsT3/sounds/soldier/injured.wav',
 
-    PLATFORM_MOVE: '../../0_AssetsT3/sounds/plataformaMovendo.wav',
-    DOOR_OPEN: '../../0_AssetsT3/sounds/doorOpening.wav',
+    PLATFORM_MOVE: '../0_AssetsT3/sounds/plataformaMovendo.wav',
+    DOOR_OPEN: '../0_AssetsT3/sounds/doorOpening.wav',
 };
 
 let listener;

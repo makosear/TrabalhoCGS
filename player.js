@@ -1,7 +1,7 @@
 import * as THREE from  'three';
-import {setDefaultMaterial} from "../libs/util/util.js";
+import {setDefaultMaterial} from "./libs/util/util.js";
 import  * as CT from "./point.js"
-import {initRenderer}from "../libs/util/util.js";
+import {initRenderer}from "./libs/util/util.js";
 
 
 export function instancePlayer(){

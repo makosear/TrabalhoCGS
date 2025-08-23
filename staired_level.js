@@ -5,7 +5,7 @@ import {initRenderer,
         initDefaultBasicLight,
         setDefaultMaterial, 
         onWindowResize,
-        createGroundPlaneXZ                } from "../libs/util/util.js";
+        createGroundPlaneXZ                } from "./libs/util/util.js";
 
 export function genStairedLevel(width, height, length, stair_w, stair_l, number_of_steps, path,stair_displacement,stair_path) {
     // Main container

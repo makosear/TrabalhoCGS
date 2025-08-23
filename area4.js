@@ -8,13 +8,13 @@ import * as HANGAR from './hangar.js'
 
 import {
         setDefaultMaterial,
-        createGroundPlaneXZ} from "../libs/util/util.js";
+        createGroundPlaneXZ} from "./libs/util/util.js";
 import * as TF from './texturingfuncs.js'      
 
 
 export function area4()
 {
-    let center = new THREE.Mesh(new THREE.BoxGeometry(0.1,0.1,0.1),TF.setMaterial(["../assets/textures/intertravado.jpg"],0.1,0.1));
+    let center = new THREE.Mesh(new THREE.BoxGeometry(0.1,0.1,0.1),TF.setMaterial(["./assets/textures/intertravado.jpg"],0.1,0.1));
 
 let hangarL = HANGAR.HANGAR(70, 40, 38, 20);
 let hangarR = HANGAR.HANGAR(70, 40, 38, 20);

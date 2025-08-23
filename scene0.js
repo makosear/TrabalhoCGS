@@ -9,7 +9,7 @@ import * as A4 from './area4.js'
 
 import {
         setDefaultMaterial,
-        createGroundPlaneXZ} from "../libs/util/util.js";
+        createGroundPlaneXZ} from "./libs/util/util.js";
 import * as TF from './texturingfuncs.js'      
 
 export function Scene0()

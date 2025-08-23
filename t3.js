@@ -1,12 +1,12 @@
 import * as THREE from  'three';
-import Stats from '../build/jsm/libs/stats.module.js';
+import Stats from './build/jsm/libs/stats.module.js';
 import {initRenderer,
         initDefaultBasicLight,
         setDefaultMaterial, 
         onWindowResize,
-        createGroundPlaneXZ } from "../libs/util/util.js";
+        createGroundPlaneXZ } from "./libs/util/util.js";
 import * as S0 from "./scene0.js";
-import {PointerLockControls} from '../build/jsm/controls/PointerLockControls.js';
+import {PointerLockControls} from './build/jsm/controls/PointerLockControls.js';
 import { initSoundSystem, toggleBackgroundMusic, playSound } from './sons/sons.js'; // Adicione esta importação
 import { moveBullet } from "./arma/armaLancador.js"; 
 import * as CHAVE from './chave.js';
@@ -22,10 +22,10 @@ import * as GATE from './gateAnim.js'
 import * as TF from './texturingfuncs.js'
 
 import * as HANGAR from './hangar.js'
-import {OBJLoader} from '../build/jsm/loaders/OBJLoader.js';
-import {MTLLoader} from '../build/jsm/loaders/MTLLoader.js';
+import {OBJLoader} from './build/jsm/loaders/OBJLoader.js';
+import {MTLLoader} from './build/jsm/loaders/MTLLoader.js';
 import { Plane } from './plane.js';
-import { CubeTextureLoaderSingleFile } from '../libs/util/cubeTextureLoaderSingleFile.js';
+import { CubeTextureLoaderSingleFile } from './libs/util/cubeTextureLoaderSingleFile.js';
 import * as VA from './animMove.js'
 
 import { instancePlayer, createPlayerHpBar, updatePlayerHpBar } from './player.js';
@@ -113,7 +113,7 @@ function createGotAllKeysUI() {
 
 initSoundSystem(camera);
 
-let plane = TF.createGroundPlaneXZCust(500, 500, 10, 10, TF.planeTex(["../assets/textures/intertravado.jpg"]));
+let plane = TF.createGroundPlaneXZCust(500, 500, 10, 10, TF.planeTex(["./assets/textures/intertravado.jpg"]));
  scene.add(plane);
  plane.receiveShadow=true;
    // center.plane.translateY(+0.15);
